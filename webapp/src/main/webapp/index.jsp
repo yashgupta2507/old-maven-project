@@ -1,3 +1,3 @@
-Hi, Welcome to DevOps World...CI-CD demo!!!
+Hi, Welcome to DevOps World.!!!
 Thank you :)
 
