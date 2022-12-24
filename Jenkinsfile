@@ -12,5 +12,13 @@ stages {
 {
     sh 'mvn test'
 }}}
+  
+  
+    stage('create deployable package')
+  {steps {withMaven(globalMavenSettingsConfig: '6ae3dfc3-6ab7-4e7b-a9bd-418f757884b0', jdk: 'JAVA_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '90c73295-0087-412a-9860-16baf9cf34f2') 
+{
+    sh 'mvn clean package'
+}}}
+  
 }
 }
