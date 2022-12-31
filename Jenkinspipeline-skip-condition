@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Example Deploy') {
             when {
-               branch 'prakash'                 //jenkins will check branch if branch not found then skip the stage
+               branch 'master'                 //jenkins will check branch if branch not found then skip the stage
             }
             steps {
                 echo 'Deploying to prod'
