@@ -24,19 +24,17 @@ stages {
    
    
    {parallel
-     {stage ('deploy to vm1')
+     { 
+	   stage ('deploy to vm1')
 	   {steps {sh 'echo deploying-to-vm1' }}
-	 
-	 }
-	 {stage ('deploy to vm2')
+	 	 
+	   stage ('deploy to vm2')
 	   {steps {sh 'echo deploying-to-vm2' }}
-	 
-	 }
-	 
-	 {stage ('deploy to vm3')
+	  
+	   stage ('deploy to vm3')
 	   {steps {sh 'echo deploying-to-vm3' }}
 	 
-	 }
+	 
 	 
 	 }
   
