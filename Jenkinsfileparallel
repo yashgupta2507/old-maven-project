@@ -29,7 +29,7 @@ stages {
 	   {steps {sh 'echo deploying-to-vm1' }}
 	 	 
 	   stage ('deploy to vm2')
-	   {steps {sh 'echo deploying-to-vm2' }}
+	   {steps {sh 'ehco deploying-to-vm2' }}
 	  
 	   stage ('deploy to vm3')
 	   {steps {sh 'echo deploying-to-vm3' }}
