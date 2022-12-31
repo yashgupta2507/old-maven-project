@@ -7,11 +7,11 @@ pipeline {
             }
         }
         stage('Example Deploy') {
-      //      when {
-      //         branch 'production'                 //jenkins will check branch if branch not found then skip the stage
-      //      }
+            when {
+               branch 'master'                 //jenkins will check branch if branch not found then skip the stage
+            }
             steps {
-                echo 'Deploying'
+                echo 'Deploying to prod'
             }
         }
     }
