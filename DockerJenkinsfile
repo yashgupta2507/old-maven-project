@@ -16,6 +16,12 @@ stages
   {steps { sh 'docker build -t pkw0301/mavenwebapp:01 .' }}  //pkw0301 is docker registry id
   
   
+  stage ('push docker image to docker regsitry')
+  {steps { withDockerRegistry(credentialsId: 'dockerHubRegistry', url: 'https://index.docker.io/v1/') 
+  { sh 'docker push pkw0301/mavenwebapp:01' } 
+  }}
+  
+  
   
   }
 }
