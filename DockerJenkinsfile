@@ -12,6 +12,9 @@ stages
   { sh 'mvn clean package' }
   }}
   
+  stage ('docker build or create image')
+  {steps { sh 'docker build -t pkw0301/mavenwebapp:01 .' }}  //pkw0301 is docker registry id
+  
   
   
   }
