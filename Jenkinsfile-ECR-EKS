@@ -15,5 +15,11 @@ stages
   stage ('docker build or create image')
   {steps 
     { sh 'docker build -t 652912600783.dkr.ecr.eu-central-1.amazonaws.com/devopsoct:latest .' }}  //ecr is docker registry id
+    
+    
+  stage ('docker push to ECR')
+  {steps { withDockerRegistry(credentialsId: 'ecr:eu-central-1:ekscicd', url: 'https://652912600783.dkr.ecr.eu-central-1.amazonaws.com/devopsoct') 
+   { sh 'docker push 652912600783.dkr.ecr.eu-central-1.amazonaws.com/devopsoct:latest' } 
+}}
   
   }}
