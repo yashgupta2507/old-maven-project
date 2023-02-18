@@ -9,16 +9,16 @@ spec:
   selector:
     matchLabels:
       app: tomcatwebapp
-	    author: prakash
+      author: prakash
   template:
     metadata:
       labels:                           #labels should match with matchLabels
         app: tomcatwebapp
-		    author: prakash
+        author: prakash
     spec:
       containers:
       - name: tomcatwebapp
-        image: <ECR>
+        image: 652912600783.dkr.ecr.eu-central-1.amazonaws.com/devopsoct:latest
         ports:
         - containerPort: 8080
 ---
