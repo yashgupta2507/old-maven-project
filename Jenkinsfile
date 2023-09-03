@@ -19,6 +19,12 @@ stages
     stage('docker image creation')
     {steps { sh 'docker build -t pkw0301/tomcat2023:latest .' }}
 
+
+    stage('docker login and push to Docker Registry')
+    {steps { withDockerRegistry(credentialsId: 'DockerHubAccount', url: 'https://index.docker.io/v1/') 
+     {sh 'docker push pkw0301/tomcat2023:latest' }
+    }}
+
 //    stage ('deploy to tomcat')
 //    {steps { sshagent(['tomcat-ci-cd']) {
 //    sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@3.120.205.147:/usr/share/tomcat/webapps/'
