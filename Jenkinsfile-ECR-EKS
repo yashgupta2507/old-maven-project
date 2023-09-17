@@ -27,7 +27,7 @@ withDockerRegistry(credentialsId: 'ecr:eu-central-1:awsaccount', url: 'https://0
 
 
 stage ('eks deployment')
-{ steps { withAWS(credentials: 'awsaccount', region: 'eu-central-1') 
+{ steps { withAWS(credentials: 'awsaccount', endpointUrl: '172.31.29.30:443', region: 'eu-central-1')
 { sh 'kubectl apply -f eks-manifest.yaml'}
 } }
 
