@@ -18,6 +18,13 @@ stage ('build the code')
  {  sh 'mvn package' } 
 } } 
 
+stage ('docker build and push')
+{ steps { // This step should not normally be used in your script. Consult the inline help for details.
+withDockerRegistry(credentialsId: 'ecr:eu-central-1:awsaccount', url: '040872219986.dkr.ecr.eu-central-1.amazonaws.com/myregistry') 
+{ sh 'docker build -t 040872219986.dkr.ecr.eu-central-1.amazonaws.com/myregistry:latest .'
+  sh ' docker push 040872219986.dkr.ecr.eu-central-1.amazonaws.com/myregistry:latest'} 
+} }
+
 
 }
 }
