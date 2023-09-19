@@ -1,0 +1,16 @@
+pipeline
+{
+    agent any
+    stages
+    {
+        stage ('scm checkout or download the code')
+        { steps { git 'https://github.com/prakashk0301/maven-project' } }
+
+
+
+
+
+
+    }
+
+}
