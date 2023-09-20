@@ -9,11 +9,11 @@ pipeline
         stage ('execute unit test framework')
         {steps { withMaven(globalMavenSettingsConfig: '88067031-b704-4db8-9f10-43532cc29286', jdk: 'LocalJDK', maven: 'LocalMVN', mavenSettingsConfig: '437a1625-ac9f-453b-99a1-53bbd6165f5c', traceability: true) 
           { sh 'mvn test' } 
-           post {
-             always {
-                 junit 'target/surefire-reports/*.xml'    //generate unit test xml report, junit is one of the testing tool
-                    }
-                }
+//           post {
+//             always {
+//                 junit 'target/surefire-reports/*.xml'    //generate unit test xml report, junit is one of the testing tool
+//                    }
+//                }
         }}
 
         stage ('generate deployable pacakge')
