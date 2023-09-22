@@ -11,11 +11,13 @@ stages
 }}
 
  stage ('sonar analysis and build')
-   {steps
-     { withSonarQubeEnv(credentialsId: 'sonar')
-        { withMaven(globalMavenSettingsConfig: '88067031-b704-4db8-9f10-43532cc29286', jdk: 'LocalJDK', maven: 'LocalMVN', mavenSettingsConfig: '437a1625-ac9f-453b-99a1-53bbd6165f5c', traceability: true)
-           {sh 'mvn package sonar:sonar'}
-}}}
+{steps
+  { withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonar' )
+   { withMaven(globalMavenSettingsConfig: '88067031-b704-4db8-9f10-43532cc29286', jdk: 'LocalJDK', maven: 'LocalMVN', mavenSettingsConfig: '437a1625-ac9f-453b-99a1-53bbd6165f5c', traceability: true)
+
+  {sh 'mvn package sonar:sonar'}
+
+}} }
 
 
 
