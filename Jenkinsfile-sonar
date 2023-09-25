@@ -20,7 +20,7 @@ stages
 }} }
 
 stage('Quality Gate Status')
-{
+{ steps {
   timeout(time: 1, unit: 'HOURS') 
   {
     def qg = waitForQualityGate()
@@ -30,6 +30,7 @@ stage('Quality Gate Status')
      }
      }
    }
+}
 
 
 }
