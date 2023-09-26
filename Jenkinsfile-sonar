@@ -17,7 +17,7 @@ stages
 
   {sh 'mvn package '}
 
-}} }
+}} 
 
 
 stage ('deploy to dev tomcat')
