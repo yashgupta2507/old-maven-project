@@ -17,6 +17,6 @@ pipeline
         } }
 
         stage ('ansible-ci-cd')
-        {steps { sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible-master', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'ansible-playbook /etc/ansible/playbooks/tomcat-playbook.yaml', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//etc//ansible//playbooks//', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'tomcat-playbook.yaml, webapp/target/webapp.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)]) }}
+        {steps { sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible-master', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'ansible-playbook /etc/ansible/playbooks/tomcat-playbook.yaml', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//etc//ansible//playbooks//', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'tomcat-playbook.yaml, **/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)]) }}
     
 }} 
