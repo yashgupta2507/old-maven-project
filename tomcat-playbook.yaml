@@ -29,7 +29,7 @@
 
     - name: copy artifacts 
       copy:
-        src: /etc/ansible/playbooks                       #ansible master
+        src: /etc/ansible/playbooks/webapp.war                       #ansible master
         dest: /opt/apache-tomcat-9.0.80/webapps/          #ansible node
  
 #    - name: download war file from jenkins
