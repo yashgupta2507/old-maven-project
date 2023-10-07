@@ -26,8 +26,13 @@
 
     - name: start catalina service    	#we can use CMD or SHELL module
       command: nohup /opt/apache-tomcat-9.0.80/bin/startup.sh
+
+    - name: copy artifacts 
+      copy:
+        src: /etc/ansible/playbooks                       #ansible master
+        dest: /opt/apache-tomcat-9.0.80/webapps/          #ansible node
  
-    - name: download war file from jenkins
-      get_url:
-        url: https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
-        dest: /opt/apache-tomcat-9.0.80/webapps/
+#    - name: download war file from jenkins
+#      get_url:
+#        url: https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
+#        dest: /opt/apache-tomcat-9.0.80/webapps/
