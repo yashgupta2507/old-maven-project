@@ -7,11 +7,13 @@ pipeline
         { steps { git branch: 'master', url: 'https://github.com/prakashk0301/maven-project' } }
 
         stage ('execute unit test framework')
-        {steps { withMaven(globalMavenSettingsConfig: '88067031-b704-4db8-9f10-43532cc29286', jdk: 'LocalJDK', maven: 'LocalMVN', mavenSettingsConfig: '437a1625-ac9f-453b-99a1-53bbd6165f5c', traceability: true) 
+        {steps { withMaven(globalMavenSettingsConfig: 'd21e6d6d-ca32-4dc5-8e9f-5b0349019e1d', jdk: 'LocalJDK', maven: 'LocalMVN', mavenSettingsConfig: 'f0970571-2fc3-4564-bf1b-58673d0ec37c', traceability: true) 
           { sh 'mvn test' } 
         }}
 
         stage ('generate deployable pacakge')
-        {steps { withMaven(globalMavenSettingsConfig: '88067031-b704-4db8-9f10-43532cc29286', jdk: 'LocalJDK', maven: 'LocalMVN', mavenSettingsConfig: '437a1625-ac9f-453b-99a1-53bbd6165f5c', traceability: true) 
+        {steps { withMaven(globalMavenSettingsConfig: 'd21e6d6d-ca32-4dc5-8e9f-5b0349019e1d', jdk: 'LocalJDK', maven: 'LocalMVN', mavenSettingsConfig: 'f0970571-2fc3-4564-bf1b-58673d0ec37c', traceability: true) 
           { sh 'mvn clean package' }     //clean is to delete all the files from workspace before package creation
-        } } }
+        } }
+    
+}} 
