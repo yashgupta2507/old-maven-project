@@ -16,6 +16,10 @@ stages
    { sh 'mvn package' } 
   }}
 
+  stage ('create docker image')
+  {steps { sh 'docker build -t pkw0301/devops-oct23:latest .' }
+  }
+
 
 }
 }
