@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: 040872219986.dkr.ecr.eu-central-1.amazonaws.com/myregistry:latest
+        image: 040872219986.dkr.ecr.eu-central-1.amazonaws.com/my-ecr:latest
         ports:
         - containerPort: 8080
 ---
