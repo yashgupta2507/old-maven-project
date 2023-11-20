@@ -26,5 +26,10 @@ stages
    }}
 
 
+  stage ('deploy to eks-kubernetes from jenkins')
+  {steps { withAWS(credentials: 'aws-cred', region: 'eu-central-1')
+   { sh 'aws eks --region eu-central-1 update-kubeconfig --name my-eks-prod'
+     sh 'kubectl apply -f eks-manifest.yaml' }}}    //helm install mychart .
+
 }
 }
